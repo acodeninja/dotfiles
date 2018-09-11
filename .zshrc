@@ -50,7 +50,9 @@ if [ -x "$(command -v keychain)" ]; then
 fi
 
 # fzf key bindings.
-source ~/.fzf/shell/key-bindings.zsh
+if [ -f ~/.fzf/shell/key-bindings.zsh ]; then
+  source ~/.fzf/shell/key-bindings.zsh
+fi
 
 # dircolors.
 if [ -x "$(command -v dircolors)" ]; then
