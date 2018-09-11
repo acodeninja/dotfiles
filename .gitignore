@@ -1,1 +1,3 @@
 .aws/credentials
+.tmux/tmuxhistory
+.tmux/sidebar/directory_widths.txt
