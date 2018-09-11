@@ -26,7 +26,7 @@ font:
   italic:
     family: Hack
 
-  size: 9.5
+  size: 8
 
   offset:
     x: 0
@@ -36,9 +36,9 @@ font:
     x: 0
     y: 0
 
-  scale_with_dpi: false
+  scale_with_dpi: true
 
-  use_thin_strokes: false
+  use_thin_strokes: true
 
 render_timer: false
 
