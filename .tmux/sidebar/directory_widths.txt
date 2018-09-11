@@ -1,0 +1,16 @@
+/home/lawrence	40
+/home/lawrence/.Homestead/bin	40
+/home/lawrence/.Homestead/bin	40
+/home/lawrence/.Homestead	40
+/home/lawrence/code/personal-resume	40
+/home/lawrence/code/tribestead	40
+/home/lawrence/.dotfiles	40
+/home/lawrence/code/tribestead	40
+	2
+	2
+	2
+	2
+/home/lawrence	40
+/home/lawrence/code/tribestead	40
+/home/lawrence/code/tribestead	40
+/home/lawrence/code/tribepad/codebases	40

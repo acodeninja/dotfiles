@@ -49,6 +49,11 @@ if [ -x "$(command -v keychain)" ]; then
     eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
 fi
 
+# Manage SSH with Keychain.
+if [ -x "$(command -v keychain)" ]; then
+    eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
+fi
+
 # Base16 Shell.
 [ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
 
@@ -56,5 +61,8 @@ fi
 if [[ -x "$(command -v tmux)" && "$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))" = "alacritty" ]]; then
     [ -z "$TMUX" ] && { tmux attach-session || exec tmux && exit; }
 fi
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6ceb9d9910b5d1e7183b61a1751fcb0947dfea05
