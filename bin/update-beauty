@@ -68,7 +68,7 @@ i3blocks() {
     /usr/bin/i3blocks -V
     echo "───────────────────────────────────────────────────────────────────"
     echo -e $magenta"\n Updating i3blocks-contrib... \n"$white
-    cd ~/.local/bin/i3blocks-contrib
+    cd ~/.local/src/i3blocks-contrib
     git pull
 }
 
@@ -95,6 +95,7 @@ i3lock() {
     echo -e $magenta"\n Updating i3lock-fancy... \n"$white
     cd ~/.local/src/i3lock-fancy
     git pull
+    sudo make install
 }
 
 rofi() {

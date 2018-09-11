@@ -27,7 +27,7 @@ plugins=(
 # Environment variables.
 source ~/.exports
 
-# Oh My Zsh time!
+# Oh My Zsh.
 source "$ZSH"/oh-my-zsh.sh
 
 # User config.
@@ -47,6 +47,14 @@ source ~/.oh-my-zsh/plugins/z/z.sh
 # Manage SSH with Keychain.
 if [ -x "$(command -v keychain)" ]; then
     eval "$(keychain --eval --quiet id_rsa_github id_rsa_gitlab)"
+fi
+
+# fzf key bindings.
+source ~/.fzf/shell/key-bindings.zsh
+
+# dircolors.
+if [ -x "$(command -v dircolors)" ]; then
+    eval "$(dircolors -b ~/.dircolors)"
 fi
 
 # Manage SSH with Keychain.
