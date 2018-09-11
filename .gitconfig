@@ -18,6 +18,7 @@
 [user]
   	name = Lawrence
   	email = lawrence@acode.ninja
+    signingkey = 8500B820BAA3A423
 
 [core]
     editor = vim
@@ -65,4 +66,4 @@
     show = diff-so-fancy | less --tabs=4 -RFX
 
 [gpg]
-    program = gpg
+    program = gpg2
