@@ -16,9 +16,8 @@
     undo = reset HEAD~1
 
 [user]
-    email = diki1aap@gmail.com
-    name = Diki Ananta
-    signingKey = 833E0D264B13927C
+  	name = Lawrence
+  	email = lawrence@acode.ninja
 
 [core]
     editor = vim
