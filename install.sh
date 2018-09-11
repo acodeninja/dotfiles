@@ -7,7 +7,7 @@ white='\e[0;37m'
 CMD="$1"
 dotfilesdir=$(pwd)
 backupdir=~/.dotfiles.orig
-dotfiles=(.i3 .zsh .aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .tmux.conf .wgetrc .Xresources .zshrc)
+dotfiles=(.i3 .zsh .aliases .bash_profile .bash_prompt .bashrc .dircolors .editorconfig .exports .functions .gemrc .tigrc .tmux.conf .tmux .wgetrc .Xresources .zshrc)
 dotfiles_config=(.alacritty .compton .dunst .htop .i3blocks .rofi)
 
 printusage() {
@@ -65,6 +65,11 @@ install() {
         /bin/rm -rf ~/.config/${dots_conf[@]//./}
         /bin/ln -fs "$dotfilesdir/${dots_conf}" ~/.config/${dots_conf[@]//./}
     done
+
+    # Ensure plugins are pulled for tmux
+    git submodule init
+    git submodule update
+    ~/.tmux/plugins/tpm/bin/install_plugins > /dev/null
 
     echo -e $blue"New dotfiles is installed!\n"$white >&2
     echo "There may be some errors when Terminal is restarted." >&2
