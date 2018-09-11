@@ -71,6 +71,13 @@ install() {
     git submodule update
     ~/.tmux/plugins/tpm/bin/install_plugins > /dev/null
 
+    # Install rvm
+    gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+    curl -sSL https://get.rvm.io | bash -s stable
+
+    # Install nvm
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
     echo -e $blue"New dotfiles is installed!\n"$white >&2
     echo "There may be some errors when Terminal is restarted." >&2
     echo "Please read carefully the error messages and make sure all packages are installed. See more info in README.md." >&2
