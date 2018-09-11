@@ -49,7 +49,7 @@ popup_during_fullscreen smart
 bindsym $mod+Return workspace $ws1; exec --no-startup-id alacritty
 
 # start a program launcher
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF'"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # switching window with win+tab
@@ -156,7 +156,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+F1                 exec gkamus
 bindsym $mod+F2 workspace $ws2; exec subl
 bindsym $mod+F3 workspace $ws3; exec chromium-browser
-bindsym $mod+F4 workspace $ws4; exec nautilus
+bindsym $mod+F4 workspace $ws4; exec pcmanfm
 bindsym $mod+F5 workspace $ws5; exec evince
 bindsym $mod+F6 workspace $ws6; exec audacious
 bindsym $mod+F7 workspace $ws7; exec gcolor2
@@ -205,6 +205,7 @@ for_window [window_role="app"]                      floating enable
 for_window [window_role="pop-up"]                   floating enable
 for_window [window_role="task_dialog"]              floating enable
 for_window [title="Preferences$"]                   floating enable
+for_window [class="File-roller"]                    floating enable
 for_window [class="Galculator"]                     floating enable
 for_window [class="Gcolor2"]                        floating enable
 for_window [class="Gkamus"]                         floating enable
@@ -212,6 +213,7 @@ for_window [class="Go-for-it"]                      floating enable
 for_window [class="Lightdm-gtk-greeter-settings"]   floating enable
 for_window [class="Lxappearance"]                   floating enable
 for_window [class="Menu"]                           floating enable
+for_window [class="Nm-connection-editor"]           floating enable
 for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
@@ -221,7 +223,8 @@ assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
 assign [class="Firefox"]            → $ws3
 assign [class="Authy"]              → $ws3
-assign [class="Nautilus"]           → $ws4
+assign [class="File-roller"]        → $ws4
+assign [class="Pcmanfm"]            → $ws4
 assign [class="Evince"]             → $ws5
 assign [class="ghostwriter"]        → $ws5
 assign [class="libreoffice"]        → $ws5
@@ -236,7 +239,7 @@ assign [class="Galculator"]         → $ws9
 assign [class="Gnome-font-viewer"]  → $ws9
 assign [class="Go-for-it"]          → $ws9
 assign [class="Gucharmap"]          → $ws9
-assign [class="Keepassx"]           → $ws9
+assign [class="keepassxc"]          → $ws9
 assign [class="Transmission-gtk"]   → $ws9
 assign [class="Bleachbit"]          → $ws10
 assign [class="Bum"]                → $ws10
@@ -255,11 +258,11 @@ assign [class="Lightdm-gtk-greeter-settings"]   → $ws10
 assign [class="Software-properties-gtk"]        → $ws10
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
-client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
-client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
-client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
-client.placeholder      #212121 #0C0C0C #FFFFFF #212121   #262626
+client.focused          #2b83a6 #2b83a6 #ffffff #dddddd   #2b83a6
+client.focused_inactive #212121 #212121 #86888c #292d2e   #5a5a5a
+client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
+client.urgent           #d64e4e #d64e4e #ffffff #d64e4e   #d64e4e
+client.placeholder      #212121 #0c0c0c #ffffff #212121   #262626
 client.background       #212121
 
 # start i3bar to display a workspace bar
@@ -275,13 +278,13 @@ bar {
 
     colors {
         background  #212121
-        statusline  #DDDDDD
+        statusline  #dddddd
         separator   #666666
         # class             border  backgr. text
-        focused_workspace   #2B83A6 #2B83A6 #FFFFFF
-        active_workspace    #212121 #212121 #FFFFFF
-        inactive_workspace  #212121 #212121 #86888C
-        urgent_workspace    #D64E4E #D64E4E #FFFFFF
+        focused_workspace   #2b83a6 #2b83a6 #ffffff
+        active_workspace    #212121 #212121 #ffffff
+        inactive_workspace  #212121 #212121 #86888c
+        urgent_workspace    #d64e4e #d64e4e #ffffff
     }
 }
 
@@ -294,5 +297,6 @@ gaps outer 2
 exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
-exec --no-startup-id feh --bg-fill ~/Public/desktop/dark-planet-minimalist.png
+exec --no-startup-id lxpolkit
+exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
