@@ -42,7 +42,7 @@ source ~/.functions
 source ~/.functions_private
 
 # Tracks your most used directories, based on frecency with z.
-source ~/.zsh/plugins/z/z.sh
+source ~/.oh-my-zsh/plugins/z/z.sh
 
 # Manage SSH with Keychain.
 if [ -x "$(command -v keychain)" ]; then
@@ -56,3 +56,5 @@ fi
 if [[ -x "$(command -v tmux)" && "$(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$))" = "alacritty" ]]; then
     [ -z "$TMUX" ] && { tmux attach-session || exec tmux && exit; }
 fi
+
+
